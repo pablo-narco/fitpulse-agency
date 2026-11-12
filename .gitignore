@@ -1,0 +1,6 @@
+.env
+data/
+node_modules/
+vendor/
+agency/employees/*/.upgrade/
+.DS_Store

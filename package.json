@@ -1,0 +1,14 @@
+{
+  "name": "fitpulse-agency",
+  "version": "1.0.0",
+  "description": "FitPulse AI: an autonomous AI agency for fitness clubs (1 Project Manager + 7 AI employees) with a Boss Command Center dashboard.",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server/index.mjs",
+    "hire": "node scripts/hire-team.mjs",
+    "test": "node scripts/smoke-test.mjs"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,187 @@
+{
+  "agency": {
+    "name": "FitPulse AI",
+    "type": "Fitness Club Growth Agency",
+    "client": "Small and mid-size fitness clubs, gyms and boutique studios without an in-house marketing team",
+    "services": [
+      "Lead generation and trial booking",
+      "Social media content",
+      "Member retention",
+      "Reputation management",
+      "Competitor and performance reporting"
+    ]
+  },
+  "employees": [
+    {
+      "id": "pm",
+      "kit": "chief-of-staff",
+      "name": "Maya",
+      "title": "Project Manager (Chief of Staff)",
+      "isManager": true,
+      "responsibilities": [
+        "Audits the work of all 7 employees",
+        "Assigns, splits and tracks tasks",
+        "Keeps the Google Sheet ledger up to date",
+        "Emails the Boss a daily status summary",
+        "Answers the Boss's questions in the dashboard chat from live data"
+      ],
+      "inputs": "Tasks and questions from the Boss; status and outputs from all 7 employees; the ledger",
+      "outputs": "Task assignments, ledger rows, daily email report, chat answers, weekly summary",
+      "tools": ["Google Sheets ledger", "Email bridge (Apps Script MailApp)", "Dashboard chat", "LLM API"],
+      "kpis": ["Tasks assigned per day", "Share of tasks completed on time", "Blocked tasks older than 24h"],
+      "kpiKind": "assignment",
+      "kpiLabel": "Tasks delegated",
+      "reportsTo": "Boss",
+      "handsOverTo": "All 7 employees"
+    },
+    {
+      "id": "lead-researcher",
+      "kit": "gtm-engineer",
+      "name": "Leo",
+      "title": "Lead Researcher",
+      "responsibilities": [
+        "Finds local prospects for the club: nearby companies for corporate memberships, communities, partners",
+        "Qualifies each prospect and records where it was found",
+        "Passes qualified leads to the Sales and Booking Agent"
+      ],
+      "inputs": "Target area and audience from the Project Manager; inbound trial requests from the website form",
+      "outputs": "Leads with name, company, contact, source and status",
+      "tools": ["Web search", "Website lead form", "Google Sheets (Leads tab)", "LLM API"],
+      "kpis": ["Leads generated per day", "Share of leads with a verified source"],
+      "kpiKind": "lead",
+      "kpiLabel": "Leads generated",
+      "reportsTo": "Project Manager",
+      "handsOverTo": "Sales and Booking Agent"
+    },
+    {
+      "id": "sales-booking",
+      "kit": "sales-employee",
+      "name": "Sofia",
+      "title": "Sales and Booking Agent",
+      "responsibilities": [
+        "Follows up every new lead with a personal message",
+        "Answers inquiries about prices, schedule and trial visits",
+        "Books free trial visits and updates the lead status"
+      ],
+      "inputs": "New leads from the Lead Researcher and the website form",
+      "outputs": "Follow-up messages, trial booking proposals, updated lead statuses",
+      "tools": ["Google Sheets (Leads tab)", "Email bridge", "LLM API"],
+      "kpis": ["Follow-ups prepared per day", "Trial visits booked", "Lead response time"],
+      "kpiKind": "followup",
+      "kpiLabel": "Follow-ups prepared",
+      "reportsTo": "Project Manager",
+      "handsOverTo": "Retention Specialist"
+    },
+    {
+      "id": "content-creator",
+      "kit": "seo-employee",
+      "name": "Carter",
+      "title": "Content Creator",
+      "responsibilities": [
+        "Writes social media posts, Reels scripts and workout tips",
+        "Adapts each piece to the platform (Instagram, TikTok, Facebook, LinkedIn, Telegram)",
+        "Hands finished drafts to the Social Media Publisher"
+      ],
+      "inputs": "Content briefs from the Project Manager; club offers, schedule and news",
+      "outputs": "Post drafts with platform, title, text and hashtags",
+      "tools": ["Google Sheets (Posts tab)", "LLM API"],
+      "kpis": ["Posts created per day", "Share of drafts approved without edits"],
+      "kpiKind": "post",
+      "kpiLabel": "Posts created",
+      "reportsTo": "Project Manager",
+      "handsOverTo": "Social Media Publisher"
+    },
+    {
+      "id": "social-publisher",
+      "kit": "social-media-employee",
+      "name": "Piper",
+      "title": "Social Media Publisher",
+      "responsibilities": [
+        "Takes approved drafts from the Content Creator",
+        "Publishes to released channels and schedules the rest for Boss approval",
+        "Records platform, link and time of every published post"
+      ],
+      "inputs": "Post drafts from the Content Creator; channel releases from the Boss",
+      "outputs": "Published posts with platform, link and time; posts waiting for approval",
+      "tools": ["Telegram Bot API (released channel)", "Google Sheets (Posts tab)", "LLM API"],
+      "kpis": ["Posts published per day", "Posts waiting for approval"],
+      "kpiKind": "publish",
+      "kpiLabel": "Posts processed",
+      "reportsTo": "Project Manager",
+      "handsOverTo": "Performance Analyst"
+    },
+    {
+      "id": "retention",
+      "kit": "customer-satisfaction-employee",
+      "name": "Riley",
+      "title": "Retention Specialist",
+      "responsibilities": [
+        "Prepares win-back campaigns for members who stopped attending",
+        "Writes renewal reminders and loyalty offers",
+        "Flags churn risks to the Project Manager"
+      ],
+      "inputs": "Member segments and attendance notes from the club; booked trials from Sales",
+      "outputs": "Win-back messages, renewal reminders, churn risk notes",
+      "tools": ["Email bridge", "Google Sheets (Outputs tab)", "LLM API"],
+      "kpis": ["Win-back messages prepared per day", "Renewal reminders prepared"],
+      "kpiKind": "winback",
+      "kpiLabel": "Retention messages",
+      "reportsTo": "Project Manager",
+      "handsOverTo": "Reputation Manager"
+    },
+    {
+      "id": "reputation",
+      "kit": "web-dev-employee",
+      "name": "Remy",
+      "title": "Reputation Manager",
+      "responsibilities": [
+        "Drafts replies to reviews on Google Maps and Yelp",
+        "Prepares review request messages for happy members",
+        "Escalates serious complaints to the Project Manager"
+      ],
+      "inputs": "Reviews and complaints passed by the Boss or the Project Manager",
+      "outputs": "Review replies, review request messages, escalations",
+      "tools": ["Web search", "Google Sheets (Outputs tab)", "LLM API"],
+      "kpis": ["Review replies prepared per day", "Complaints escalated"],
+      "kpiKind": "review",
+      "kpiLabel": "Review replies",
+      "reportsTo": "Project Manager",
+      "handsOverTo": "Project Manager"
+    },
+    {
+      "id": "analyst",
+      "kit": "ad-manager-employee",
+      "name": "Avery",
+      "title": "Performance Analyst",
+      "responsibilities": [
+        "Turns the ledger into daily and weekly performance insights",
+        "Tracks local competitors' prices and offers",
+        "Flags bottlenecks and blocked work to the Project Manager"
+      ],
+      "inputs": "Ledger data, leads, posts and outputs of every employee",
+      "outputs": "Performance insights, competitor notes, bottleneck flags",
+      "tools": ["Google Sheets ledger", "Web search", "LLM API"],
+      "kpis": ["Insights delivered per day", "Bottlenecks flagged"],
+      "kpiKind": "insight",
+      "kpiLabel": "Insights delivered",
+      "reportsTo": "Project Manager",
+      "handsOverTo": "Project Manager"
+    }
+  ],
+  "routines": [
+    { "id": "daily-lead-research", "employee": "lead-researcher", "time": "09:00", "days": "mon-sat", "priority": "High",
+      "title": "Daily lead research", "description": "Find 5 new local prospects for the client club (nearby companies for corporate memberships, communities or partners). Record name, company, contact, source and source URL for each." },
+    { "id": "daily-content", "employee": "content-creator", "time": "09:30", "days": "mon-sat", "priority": "Medium",
+      "title": "Daily content drafts", "description": "Write 2 social media post drafts for today: one Instagram post with a workout tip and one Telegram post about the club's free trial visit." },
+    { "id": "daily-publish", "employee": "social-publisher", "time": "11:00", "days": "mon-sat", "priority": "Medium",
+      "title": "Publish today's posts", "description": "Take every draft post and publish it to the released channels. Send the rest to the Boss for approval." },
+    { "id": "daily-followups", "employee": "sales-booking", "time": "12:00", "days": "mon-sat", "priority": "High",
+      "title": "Follow up new leads", "description": "Prepare a personal follow-up message with a free trial offer for every lead with status New." },
+    { "id": "weekly-winback", "employee": "retention", "time": "10:00", "days": "mon,thu", "priority": "Medium",
+      "title": "Win-back campaign", "description": "Prepare 3 win-back messages for members who have not visited in 30 days: one friendly check-in, one offer, one last reminder." },
+    { "id": "weekly-reviews", "employee": "reputation", "time": "10:30", "days": "tue,fri", "priority": "Low",
+      "title": "Review request messages", "description": "Prepare 2 short messages asking happy members to leave a Google Maps review, and 1 template reply to a negative review about crowded peak hours." },
+    { "id": "daily-insights", "employee": "analyst", "time": "17:00", "days": "mon-sat", "priority": "Medium",
+      "title": "Daily performance insights", "description": "Analyse today's ledger: what was completed, what is blocked and why, which KPI moved. Give 3 short insights and 1 recommendation for tomorrow." }
+  ]
+}
