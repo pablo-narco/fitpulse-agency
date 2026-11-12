@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FitPulse AI | Boss Command Center</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<section id="login" class="login" hidden>
+  <form id="login-form" class="login-card" autocomplete="on">
+    <div class="brand"><span class="pulse"></span>FitPulse AI</div>
+    <h1>Boss Command Center</h1>
+    <p class="muted">Sign in to manage your AI agency.</p>
+    <label>Username<input name="username" autocomplete="username" required></label>
+    <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+    <p id="login-error" class="error" role="alert"></p>
+    <button class="btn primary" type="submit">Sign in</button>
+    <a class="back" href="/">Back to homepage</a>
+  </form>
+</section>
+
+<div id="app" class="app" hidden>
+  <aside class="side">
+    <div class="brand"><span class="pulse"></span>FitPulse AI</div>
+    <p class="side-sub">Fitness Club Growth Agency</p>
+    <nav id="nav">
+      <a href="#/team" data-view="team">Team</a>
+      <a href="#/assign" data-view="assign">Assign task</a>
+      <a href="#/board" data-view="board">Live task board</a>
+      <a href="#/reports" data-view="reports">Reports</a>
+      <a href="#/chat/pm" data-view="chat">Chat</a>
+    </nav>
+    <div class="side-foot">
+      <div id="clock" class="muted small"></div>
+      <button id="logout" class="btn ghost small">Sign out</button>
+    </div>
+  </aside>
+  <main id="main" class="main"></main>
+</div>
+
+<dialog id="task-dialog" class="dialog"></dialog>
+<dialog id="post-dialog" class="dialog small-dialog"></dialog>
+<div id="toast" class="toast" role="status" hidden></div>
+
+<script src="/app.js"></script>
+</body>
+</html>

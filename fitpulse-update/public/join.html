@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register | FitPulse AI</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<section class="login">
+  <form id="join-form" class="login-card">
+    <div class="brand"><span class="pulse"></span>FitPulse AI</div>
+    <h1>Register for a free trial</h1>
+    <p class="muted">Leave your contact and we will get back to you to book your first visit.</p>
+    <label>Your name<input name="name" maxlength="80" required></label>
+    <label>Phone or email<input name="contact" maxlength="120" required></label>
+    <label>Your goal (optional)<input name="goal" maxlength="300" placeholder="Lose weight, build muscle, get back in shape"></label>
+    <label hidden>Website<input name="website" tabindex="-1" autocomplete="off"></label>
+    <p id="join-msg" class="error" role="status"></p>
+    <button class="btn primary" type="submit">Register</button>
+    <a class="back" href="/">Back to homepage</a>
+  </form>
+</section>
+<script src="/join.js"></script>
+</body>
+</html>
