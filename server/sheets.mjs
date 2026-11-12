@@ -1,7 +1,7 @@
 // Google Sheets + email bridge. Talks to the Apps Script web app in bridges/apps-script/Code.gs.
 import { config, localStamp } from "./config.mjs";
 
-const taskLink = (t) => (config.publicUrl ? config.publicUrl + "/#/task/" + t.id : "/#/task/" + t.id);
+const taskLink = (t) => (config.publicUrl ? config.publicUrl + "/boss#/task/" + t.id : "/boss#/task/" + t.id);
 const stamp = (v) => (v ? localStamp(v) : "");
 
 // One tab per collection. The first column is the row key. "Raw" keeps the full record so the

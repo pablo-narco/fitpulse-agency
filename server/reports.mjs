@@ -170,7 +170,7 @@ export function buildDailyEmail() {
     '<table style="border-collapse:collapse;width:100%"><tr><th ' + th + ">Employee</th><th " + th + ">Done</th><th " + th + ">Pending</th><th " + th + ">Blocked</th><th " + th + ">Avg min</th><th " + th + ">KPI today</th></tr>",
     r.perEmployee.map((e) => "<tr><td " + td + "><b>" + esc(e.name) + "</b><br><span style=\"color:#777;font-size:12px\">" + esc(e.title) + "</span></td><td " + td + ">" + e.completed + "</td><td " + td + ">" + e.pending + "</td><td " + td + ">" + e.blocked + "</td><td " + td + ">" + (e.avgCompletionMin ?? "") + "</td><td " + td + ">" + esc(e.kpiLabel) + ": <b>" + e.kpiValue + "</b></td></tr>").join(""),
     "</table>",
-    config.publicUrl ? '<p style="margin:20px 0 0;font-size:13px"><a href="' + esc(config.publicUrl) + '">Open the Boss Command Center</a></p>' : "",
+    config.publicUrl ? '<p style="margin:20px 0 0;font-size:13px"><a href="' + esc(config.publicUrl) + '/boss">Open the Boss Command Center</a></p>' : "",
     "</div>",
   ].join("\n");
   return { subject: r.agency + " daily status " + r.to + ": " + s.tasksCompleted + " done, " + s.tasksBlocked + " blocked, " + s.leadsGenerated + " leads", html, report: r };

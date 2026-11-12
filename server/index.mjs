@@ -95,7 +95,7 @@ function taskListItem(t) {
 }
 
 function serveStatic(req, res, urlPath) {
-  const map = { "/": "index.html", "/join": "join.html" };
+  const map = { "/": "home.html", "/join": "join.html", "/boss": "index.html" };
   const rel = map[urlPath] || urlPath.replace(/^\/+/, "");
   const file = path.normalize(path.join(PUBLIC, rel));
   if (!file.startsWith(PUBLIC + path.sep) || !fs.existsSync(file) || !fs.statSync(file).isFile()) return send(res, 404, "Not found");
